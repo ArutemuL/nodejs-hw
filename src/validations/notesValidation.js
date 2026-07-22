@@ -35,7 +35,7 @@ export const getAllNotesSchema = {
 
 // Кастомний валідатор для ObjectId
 const objectIdValidator = (value, helpers) => {
-  return !isValidObjectId(value) ? helpers.message('Invalid  noteId') : value;
+  return !isValidObjectId(value) ? helpers.message('Invalid noteId') : value;
 };
 // Схема для перевірки параметра noteId
 export const noteIdSchema = {
