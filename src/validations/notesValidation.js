@@ -17,7 +17,6 @@ export const createNoteSchema = {
     content: Joi.string().allow('').optional().messages({
       "string.base": "Content must be a string",
       "string.min": "Content should have at least {#limit} characters",
-      "string.max": "Content should have at most {#limit} characters",
       "any.required": "Content is required",
     }),
     tag: tagValidator.optional()
@@ -57,8 +56,7 @@ export const updateNoteSchema = {
     }),
     content: Joi.string().allow('').messages({
       "string.base": "Content must be a string",
-      "string.min": "Content should have at least {#limit} characters",
-      "string.max": "Content should have at most {#limit} characters",
+      "string.min": "Content should have at least {#limit} characters"
     }),
     tag: tagValidator.optional()
   }).or("title", "content", "tag"),

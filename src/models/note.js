@@ -29,10 +29,11 @@ const NoteSchema = new Schema({
 });
 
 NoteSchema.index(
-  { title: 'text', content: 'text' },
-  { weights: { title: 5, content: 2 } },
-  { name: "NoteSchemaIndex"},
-  { default_language: "english" }
-);
+   { title: "text", content: "text" },
+  {
+    name: "NoteSchemaIndex",
+    weights: { title: 5, content: 2 },
+    default_language: "english",
+  });
 
 export const Note = model('Note', NoteSchema);
