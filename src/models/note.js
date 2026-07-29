@@ -24,6 +24,11 @@ const NoteSchema = new Schema({
     trim: true,
     index: true,
   },
+   userId: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
 }, {
   timestamps: true,
   versionKey: false,
