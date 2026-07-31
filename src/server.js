@@ -21,14 +21,11 @@ app.use(cookieParser());
 
 app.use(notesRoutes);
 app.use(authRoutes);
+app.use(userRoutes);
 
 app.use(notFoundHandler);
 app.use(errors()); // Middleware для обробки помилок валідації Celebrate
 app.use(errorHandler);
-
-app.use(authRoutes);
-// Додаємо раути користувача
-app.use(userRoutes);
 
 await connectMongoDB();
 
