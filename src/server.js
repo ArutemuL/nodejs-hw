@@ -26,7 +26,6 @@ app.use(notFoundHandler);
 app.use(errors()); // Middleware для обробки помилок валідації Celebrate
 app.use(errorHandler);
 
-app.use(studentsRoutes);
 app.use(authRoutes);
 // Додаємо раути користувача
 app.use(userRoutes);
