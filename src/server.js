@@ -9,6 +9,7 @@ import notesRoutes from './routes/notesRoutes.js';
 import {errors} from 'celebrate';
 import authRoutes from './routes/authRoutes.js';
 import cookieParser from "cookie-parser";
+import userRoutes from './routes/userRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT ?? 3000;
@@ -24,6 +25,11 @@ app.use(authRoutes);
 app.use(notFoundHandler);
 app.use(errors()); // Middleware для обробки помилок валідації Celebrate
 app.use(errorHandler);
+
+app.use(studentsRoutes);
+app.use(authRoutes);
+// Додаємо раути користувача
+app.use(userRoutes);
 
 await connectMongoDB();
 
